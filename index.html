@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Redsun-Sound Samples</title>
+</head>
+
+<body>
+    <header>
+        <nav id="mainNavbar"
+            class="navbar navbar-expand-lg container-fluid navbar-dark justify-content-space-around fixed-top">
+            <a class="navbar-brand" href=""><img src="img/RedSunLogo2.png" width="60" height="60" alt="" loading="lazy"
+                    alt=""><span class="RedsunBrand">Redsun</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="container-fluid justify-content-center">
+                    <span class="navTitle navbar-text  ">From The Redsun</span>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item  active pr-5">
+                        <a class="nav-link" href="Redsun Samples.html">Samples <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active pr-5  ">
+                        <a class="nav-link" href="Redsun gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <button id="scrollToTop">
+        <img src="img/topscrllbtn2.png" width="60" height="60" alt="">
+    </button>
+    <main>
+        <section class="introVideo elementsPosition ">
+            <video autoplay muted loop id="myVideo">
+                <source src="vids/yourself.mp4" type="video/mp4">
+            </video>
+            <div class="slogan">
+                <h4 class=" text-center">Make It Stand out</h4>
+                <h2 class=" text-center">Fuse It with Sound</h2>
+            </div>
+            <img id="unmuteMuteButton" src="" alt="">
+            <div id="muteDiv" class="muteDivOff"></div>
+            <div id="controlsWrap">
+                <div id="videoControls">
+                    <img id='playPausePic' src="img/pause.png" alt="">
+                    <img id="fullscreenPic" src="img/fullscreen.png" alt="">
+                    <div id="volWrap">
+                        <img id="muteUnmute" src="img/vol up.png" alt="">
+                        <div id="rangeWrap" class="rangeDisplayOff">
+                            <input type="range" id="volRange" step="0.01" min="0" max="1" value="1">
+                        </div>
+                    </div>
+                    <progress id="progress" value="0" min="0">
+                        <span id="progressBar"></span>
+                    </progress>
+                </div>
+            </div>
+        </section>
+        <section id="sgContainer">
+            <div class="container-fluid pt-5 h1Container">
+                <h1 class=" text-center"><span class="h1text">Expand your sonic landscape</span></h1>
+                <section class="container-fluid mixerContainer">
+                    <div class="row textRow align-items-center">
+                        <div class="col-lg-1"></div>
+                        <div class=" col-lg-3" data-inviewport="scale-in">
+                            <p class="sampletext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                                dolorem
+                                sed
+                                aliquam, quibusdam alias placeat,
+                            </p>
+                        </div>
+                        <div class="textBorder col-lg-3" data-inviewport="scale-in">
+                            <p class="sampletext">, laboriosam accusamus assumenda? Deleniti expedita
+                                dignissimos
+                                id? Est, eligendi ex. Esse, ipsa.hic totam ipsum
+                            </p>
+                        </div>
+                        <div class="col-lg-5 d-flex justify-content-center">
+                            <a class="lnkBtn" href="Redsun Samples.html">
+                                <div class="linkButton d-flex justify-content-center align-items-center ">Samples
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <img src="img/adi-goldstein-nORcjIaDVLg-unsplash.jpg" alt="">
+
+            </div>
+        </section>
+        <section class=" rdsnLnkContainer mixerContainer ">
+            <div class="container-fluid linkWrap ">
+                <h2 class=" text-center pt-5"><span class="listenRedsun"> Listen to Redsun</span></h2>
+                <div class="logoContainer container">
+                    <div class="row text-center mt-0">
+                        <div class=" col-lg-4 my-3  ">
+                            <div class="logoEnlarger"><a target="_blank" href="https://redsunfrequency.bandcamp.com/">
+                                    <img class="webLink" src="img/bandecamp logo.png" alt="">
+                                </a></div>
+                            <iframe data-inviewport="scale-in" class="embeds " style=" width: 300px; height: 400px;"
+                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
+                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
+                                    Loup
+                                    by Redsun</a></iframe>
+                            <iframe data-inviewport="scale-in" class="embeds" style=" width: 300px; height: 400px;"
+                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
+                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
+                                    Loup
+                                    by Redsun</a></iframe>
+                            <iframe data-inviewport="scale-in" class="embeds" style=" width: 300px; height: 400px;"
+                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
+                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
+                                    Loup
+                                    by Redsun</a></iframe>
+                        </div>
+                        <div class=" col-lg-4 my-3  ">
+                            <div class="logoEnlarger"><a target="_blank" href="https://soundcloud.com/user-855536545">
+                                    <img class="webLink" src="img/soundcloud logo.png" alt="">
+                                </a></div>
+                            <iframe data-inviewport="scale-in" class="embeds " width="300px" height="400px"
+                                scrolling="no" frameborder="no"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <!-- <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a> <a
+                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
+                                    title="Sound Of Silence" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a>
+                            </div> -->
+                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
+                                scrolling="no" frameborder="no"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <!-- <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a> <a
+                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
+                                    title="Sound Of Silence" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a>
+                            </div> -->
+                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
+                                scrolling="no" frameborder="no"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <!-- <div
+                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a> <a
+                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
+                                    title="Sound Of Silence" target="_blank"
+                                    style="color: #cccccc; text-decoration: none;"></a>
+                            </div> -->
+                        </div>
+                        <div class=" col-lg-4 my-3  ">
+                            <div class="logoEnlarger"><a target="_blank"
+                                    href="https://www.youtube.com/channel/UCAkAfPphE8N-D2foPV1X2ig">
+                                    <img class="webLink" src="img/youtube logo.png" alt="">
+                                </a></div>
+                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
+                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
+                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
+                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid logobckgrnd">
+            <div class="row textRow align-items-center hideVideo">
+                <div class="col-md-2"></div>
+                <div class=" col-md-4 pt-5">
+                    <p class="gallerytext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                        dolorem
+                        sed
+                        aliquam, quibusdam
+                        alias placeat, hic totam ipsum, laboriosam accusamus assumenda? Deleniti expedita
+                        dignissimos
+                        id? Est, eligendi ex. Esse, ipsa.
+                    </p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <a class="lnkBtn" href="Redsun gallery.html">
+                        <div class="linkButton d-flex justify-content-center align-items-center ">Gallery
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <nav class="container-fluid footerNav">
+            <div class="row upperRow"></div>
+            <div class="row d-flex ">
+                <div class="col-lg-3 "></div>
+                <ul class="footerLink footerLinks col-lg-1 ">
+                    <li class="navLink"><a class="colorLink" href="">Projects</a></li>
+                    <li class="navLink"><a class="colorLink" href="Redsun Samples.html">Samples</a></li>
+                    <li class="navLink"><a class="colorLink" href="Redsun gallery.html">Gallery</a></li>
+                    <li class="navLink"><a class="colorLink" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <p>Sound design studio specialized in samples creation to empower your content.
+                        We develop sound samples so you can enhance your tunes set your lyrics to music
+                        or musicaly boost yours videos.
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <ul class="footerLink footerLinks col-lg-1 ">
+                    <li class="navLink"><a target="_blank" href="https://www.instagram.com/?hl=fr">
+                            <div class="bigRound borderColor">
+                                <div class="square borderColor">
+                                    <div class="rectangle borderColor">
+                                        <div class="point borderColor"></div>
+                                    </div>
+                                    <div class="smRound borderColor"></div>
+                                </div>
+                            </div>
+                        </a></li>
+                    <li class="navLink"><a target="_blank" href="https://www.facebook.com/">
+                            <div class="bigRound borderColor">
+                                <div class="borderColor">f</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="container-fluid lowerRow">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 footerLine">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 mt-4 footerCopyright"><img src="img/copyright-64.png" width="20px" height="20px"
+                                        alt="">2021 Redsun<span class="tandc">&centerdot;</span>Privacy policy<span
+                                        class="tandc">&centerdot;</span>Terms Of Service</div>
+                                <div class="col-md-6 mt-4 footerMail">Contact us:<a href="contact.html"
+                                        class="footerContact"> RedsunFrequency@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="nav.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

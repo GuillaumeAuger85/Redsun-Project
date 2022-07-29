@@ -1,0 +1,384 @@
+h1 {
+    margin-bottom: 1em;
+}
+
+.h1Container {
+    background-color: #000;
+    padding: 0px 0px;
+}
+
+.mixerContainer {
+    background-image: url("img/equalizer.png");
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.h1text {
+    color: #fff;
+    /* border-bottom: 2px solid #fff; */
+    font-size: 1.5em;
+    font-family: Audiowide;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2em;
+    text-transform: none;
+}
+
+.sampletext, .gallerytext {
+    font-size: 2em;
+    font-weight: 100;
+    color: #fff;
+}
+
+[data-inviewport="scale-in"] {
+    transition: 2s;
+    transform: scale(0.1);
+}
+
+[data-inviewport="scale-in"].is-inViewport {
+    transform: scale(1);
+}
+
+#sgContainer .textRow {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+.logobckgrnd {
+    background-image: url("img/redsunWallpaper.png");
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+.textRow {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+/* .textBorder {
+    border-left: 1px solid #fff;
+} */
+
+.h1Container img {
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+}
+
+.linkWrap {
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+.linkButton {
+    background-color: #820d0d;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 300;
+    width: 157.61px;
+    height: 66px;
+    border: 3px solid #fff;
+    border-radius: 1000px 1000px 1000px 1000px;
+}
+
+.lnkBtn:hover {
+    text-decoration: none;
+}
+
+.linkButton:hover {
+    /* color: #1a1a1a; */
+    border-color: #fff;
+    transform: translateY(-0.2em);
+    box-shadow: 0em 0.5em 0.5em -0.1em #db0202;
+    /* border-radius: 0%; */
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -999;
+}
+
+.introVideo {
+    position: relative;
+    height: 94vh;
+}
+
+.elementsPosition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controlsPosition {
+    display: flex;
+    position: relative;
+}
+
+.muteDivOff {
+    display: none;
+}
+
+.muteDivOn {
+    display: block;
+    width: 100%;
+    height: 86vh;
+}
+
+.volUp {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+.volUp:hover {
+    cursor: pointer;
+    background-color: #39464ab0;
+}
+
+#controlsWrap {
+    position: absolute;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+}
+
+#videoControls {
+    position: absolute;
+    bottom: 10px;
+    width: 96%;
+    display: none;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#playPausePic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#playPausePic:hover {
+    background-color: #39464ab0;
+}
+
+#volWrap {
+    position: relative;
+    border-radius: 1000px;
+    height: 35px;
+    width: 180px;
+    float: right;
+    /* transform: rotate(0.75turn) translateX(41%); */
+}
+
+.rangeDisplayOff {
+    display: none;
+    padding-top: 4px;
+}
+
+.rangeDisplayOn {
+    position: absolute;
+    padding-top: 6px;
+    padding-left: 5px;
+    border-radius: 0 1000px 1000px 0;
+    height: 30px;
+    width: 150px;
+    display: inline;
+    background-color: #39464ab0;
+    animation: volSlideUp ease-in 500ms;
+}
+
+@keyframes volSlideUp {
+    from {
+        margin-right: 100%;
+        width: 0%
+    }
+    to {
+        margin-right: 0%;
+        width: 80%;
+    }
+}
+
+.volRangeSlideUp {
+    animation: volSlideUp ease-in 500ms;
+    width: 129px;
+}
+
+#muteUnmute {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 0 0 50%;
+    /* transform: rotate(0.25turn); */
+}
+
+#fullscreenPic {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#fullscreenPic:hover {
+    background-color: #39464ab0;
+}
+
+#progress {
+    position: relative;
+    margin-left: 0px;
+    width: 100%;
+}
+
+#progress-bar {
+    width: 100%;
+}
+
+.slogan {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.719);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* height: 66vh; */
+    font-family: Audiowide;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: #1a1a1ab9;
+    animation: fadeInAnimation ease-in 1500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.slogan>h2 {
+    font-size: 5em;
+    animation: slidein ease 1500ms;
+    animation-iteration-count: 1
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.slogan>h4 {
+    font-size: 3em;
+    animation: slidein2 ease 1500ms;
+    animation-iteration-count: 1;
+}
+
+@keyframes slidein2 {
+    from {
+        margin-right: 100%;
+        width: 300%
+    }
+    to {
+        margin-right: 0%;
+        width: 100%;
+    }
+}
+
+.sloganOut {
+    animation: slideout ease 0.9s 1;
+}
+
+@keyframes slideout {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.hideVideo {
+    margin-top: 20em;
+}
+
+h2 .listenRedsun {
+    font-size: 2em;
+    font-family: Audiowide;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: #f1f1f1;
+    /* border-bottom: 2px solid #fff; */
+}
+
+.webLink {
+    border: 10px solid #fff;
+    border-radius: 50%;
+    transition: box-shadow 0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform: scale(0.4);
+}
+
+.webLink:hover, .webLink:focus {
+    box-shadow: 0.5em 0.5em 2em -0.5em #db0202, -0.5em -0.5em 2em -0.5em #db0202, -0.5em 0.5em 2em -0.5em #db0202, 0.5em -0.5em 2em -0.5em #db0202;
+}
+
+.embeds {
+    margin-bottom: 3em;
+    border: 1px solid #fff;
+}
+
+.logoEnlarger {
+    background-color: transparent;
+    width: 100%;
+}
+
+@media (max-width:1250px) {
+    .h1text {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 1078px) {
+    .h1text {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width:850px) {
+    .h1text {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width:620px) {
+    .h1text {
+        padding-bottom: 0em;
+    }
+}

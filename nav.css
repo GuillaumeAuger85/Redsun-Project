@@ -1,0 +1,244 @@
+body {
+    /* padding-top: 3.8rem; */
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* mainnavbar */
+
+#mainNavbar {
+    /* height: 6vh; */
+    padding: 0em 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: rgba(255, 255, 255);
+    background-color: rgb(26, 26, 26);
+}
+
+.RedsunBrand {
+    margin-left: 1em;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0em;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .04em;
+    text-transform: none;
+    line-height: 1.2em;
+}
+
+.RedsunBrand:hover {
+    color: #db0202;
+    border-bottom: 1px solid #db0202;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #db0202;
+}
+
+#mainNavbar .navbar-text {
+    font-size: 1.7em;
+    color: #fff;
+    font-family: Audiowide;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 1.2em;
+    padding-left: 9%;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    z-index: 999;
+}
+
+/* footernav */
+
+.footerNav {
+    color: #fff;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+}
+
+.navLink {
+    list-style-type: none;
+}
+
+.colorLink {
+    color: #fff;
+}
+
+.colorLink:hover, .colorLink:focus {
+    color: #db0202;
+    text-decoration: none;
+}
+
+.footerLink {
+    border-top: 1px solid #fff;
+    padding-top: 1em;
+    padding-left: 0em;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.upperRow {
+    padding-top: 2em;
+}
+
+#footer {
+    background-color: #1A1A1A;
+}
+
+.bigRound {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.square {
+    width: 22px;
+    height: 22px;
+    border: 0.1em solid #fff;
+    border-radius: 25%;
+}
+
+.footerLinks a:hover {
+    text-decoration: none;
+}
+
+.rectangle {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 8px;
+    border-bottom: 2px solid #fff;
+}
+
+.point {
+    background-color: #fff;
+    width: 3px;
+    height: 3px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.smRound {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+}
+
+.lowerRow {
+    padding-bottom: 1.5em;
+    margin-top: 1.4em;
+}
+
+.footerLine {
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding-bottom: 1.5em;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.tandc {
+    font-weight: 900;
+}
+
+.footerMail {
+    text-align: end;
+}
+
+.footerContact {
+    color: #fff;
+}
+
+.footerContact:hover {
+    color: #db0202;
+    text-decoration: none;
+}
+
+@media(max-width:1800px) {
+    #mainNavbar .navTitle {
+        font-size: 1.7em;
+    }
+}
+
+@media(max-width:1600px) {
+    #mainNavbar .navTitle {
+        font-size: 1.4em;
+    }
+}
+
+@media(max-width:1500px) {
+    #mainNavbar .navTitle {
+        font-size: 1.1em;
+    }
+}
+
+@media(max-width:1300px) {
+    #mainNavbar .navTitle {
+        display: none;
+    }
+}
+
+@media(max-width:991px) {
+    #mainNavbar .nav-link {
+        border-width: 50%;
+    }
+    .footerLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .footerLink {
+        border-top: 1px solid #fff;
+        padding-top: 1em;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .footerNav p{
+        margin-left: 5em;
+        margin-right: 5em;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:768px) {
+    .footerMail, .footerCopyright {
+        text-align: center;
+    }
+}
+
+
+
+
