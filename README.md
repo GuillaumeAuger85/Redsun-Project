@@ -2,7 +2,8 @@
 
 ### View it [here](https://guillaumeauger85.github.io/Redsun-Project/)
 
-![htmlCssJsBootstrap](https://user-images.githubusercontent.com/49698792/181607507-a3eda093-31d0-43d0-a3e9-746ef83a1374.png)
+![htmlCssJsBootstrap](https://user-images.githubusercontent.com/49698792/182234786-2f21d1a1-7de8-4930-b534-86691ca5b5b5.png)
+
 
 Portfolio project i started half way of my Udemy training course.
 
