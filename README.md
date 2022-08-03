@@ -2,7 +2,7 @@
 
 ### View it [here](https://guillaumeauger85.github.io/Redsun-Project/)
 
-![htmlCssJsBootstrap](https://user-images.githubusercontent.com/49698792/182234786-2f21d1a1-7de8-4930-b534-86691ca5b5b5.png)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 
 Portfolio project i started half way of my Udemy training course.
