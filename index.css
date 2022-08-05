@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-  }
+}
 
 h1 {
     margin-bottom: 1em;
@@ -208,6 +208,7 @@ h1 {
         margin-right: 100%;
         width: 0%
     }
+
     to {
         margin-right: 0%;
         width: 80%;
@@ -275,6 +276,7 @@ h1 {
     0% {
         opacity: 0%;
     }
+
     100% {
         opacity: 100%;
     }
@@ -291,6 +293,7 @@ h1 {
         margin-left: 100%;
         width: 300%
     }
+
     to {
         margin-left: 0%;
         width: 100%;
@@ -308,6 +311,7 @@ h1 {
         margin-right: 100%;
         width: 300%
     }
+
     to {
         margin-right: 0%;
         width: 100%;
@@ -322,6 +326,7 @@ h1 {
     from {
         opacity: 100%;
     }
+
     to {
         opacity: 0%;
     }
@@ -382,12 +387,13 @@ h2 .listenRedsun {
 }
 
 @media (max-width: 837px) {
-    .slogan>h4{
+    .slogan>h4 {
         font-size: 2.5em
     }
-    .slogan>h2{
+
+    .slogan>h2 {
         font-size: 3.5em
-    } 
+    }
 }
 
 @media (max-width:620px) {
@@ -396,24 +402,33 @@ h2 .listenRedsun {
     }
 }
 
-@media (max-width:586px){
-    .slogan>h4{
+@media (max-width:586px) {
+    .slogan>h4 {
         font-size: 2em
     }
-    .slogan>h2{
+
+    .slogan>h2 {
         font-size: 2.5em
     }
-    
+
 }
 
-@media (max-width:418px){
-    .slogan>h4{
+@media (max-width:418px) {
+    .slogan>h4 {
         font-size: 1.8em
     }
-    .slogan>h2{
+
+    .slogan>h2 {
         font-size: 2em
     }
-    
+
 }
 
-
+#preloader {
+    background: #000 url(img/Loader.gif) no-repeat center;
+    background-size: 10%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

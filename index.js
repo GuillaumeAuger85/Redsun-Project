@@ -1,3 +1,5 @@
+
+
 // sample and gallery linkButton
 const linkButtons = document.querySelectorAll('.linkButton')
 
@@ -25,12 +27,14 @@ const Slogan = document.querySelector('#slogan');
 const video = document.querySelector('#myVideo');
 const h2 = document.querySelector('#slogan>h2');
 const h4 = document.querySelector('#slogan>h4');
+const loader = document.querySelector('#preloader');
 
-video.addEventListener("loadeddata", (event) => {
+video.addEventListener('loadeddata',()=>{
+    loader.style.display= "none";
     Slogan.classList.add('slogan');
     h2.classList.remove('d-none');
     h4.classList.remove('d-none')
-});
+})
 
 // fadeout message video / fadein unmutemutebutton video
 const slogan = document.querySelector('.slogan');
@@ -74,7 +78,7 @@ muteDiv.addEventListener('mousemove', () => {
     videoControls.style.display = 'block';
     setTimeout(() => {
         videoControls.style.display = 'none';
-    }, 5000)
+    }, 3000)
 })
 
 
