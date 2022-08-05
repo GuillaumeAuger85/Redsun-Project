@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="vids/yourself.mp4" as="video" type="video/mp4">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -53,9 +54,9 @@
             <video autoplay muted loop id="myVideo">
                 <source src="vids/yourself.mp4" type="video/mp4">
             </video>
-            <div class="slogan">
-                <h4 class=" text-center">Make It Stand out</h4>
-                <h2 class=" text-center">Fuse It with Sound</h2>
+            <div id="slogan" class="">
+                <h4 class=" text-center d-none">Make It Stand out</h4>
+                <h2 class=" text-center d-none">Fuse It with Sound</h2>
             </div>
             <img id="unmuteMuteButton" src="" alt="">
             <div id="muteDiv" class="muteDivOff"></div>

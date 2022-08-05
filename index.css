@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+  }
+
 h1 {
     margin-bottom: 1em;
 }
@@ -371,10 +375,19 @@ h2 .listenRedsun {
     }
 }
 
-@media (max-width:850px) {
+@media (max-width: 850px) {
     .h1text {
         font-size: 0.9em;
     }
+}
+
+@media (max-width: 837px) {
+    .slogan>h4{
+        font-size: 2.5em
+    }
+    .slogan>h2{
+        font-size: 3.5em
+    } 
 }
 
 @media (max-width:620px) {
@@ -382,3 +395,25 @@ h2 .listenRedsun {
         padding-bottom: 0em;
     }
 }
+
+@media (max-width:586px){
+    .slogan>h4{
+        font-size: 2em
+    }
+    .slogan>h2{
+        font-size: 2.5em
+    }
+    
+}
+
+@media (max-width:418px){
+    .slogan>h4{
+        font-size: 1.8em
+    }
+    .slogan>h2{
+        font-size: 2em
+    }
+    
+}
+
+

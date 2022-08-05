@@ -19,30 +19,35 @@ for (let button of linkButtons) {
 };
 
 
+
+//wait for video to load first frame to launch slogan animation
+const Slogan = document.querySelector('#slogan');
+const video = document.querySelector('#myVideo');
+const h2 = document.querySelector('#slogan>h2');
+const h4 = document.querySelector('#slogan>h4');
+
+video.addEventListener("loadeddata", (event) => {
+    Slogan.classList.add('slogan');
+    h2.classList.remove('d-none');
+    h4.classList.remove('d-none')
+});
+
 // fadeout message video / fadein unmutemutebutton video
 const slogan = document.querySelector('.slogan');
 const sloganparent = document.querySelector('.introVideo');
 const unmuteMuteButton = document.querySelector('#unmuteMuteButton');
-const video = document.querySelector('#myVideo');
 const videoControls = document.querySelector('#videoControls');
 const muteDiv = document.querySelector('#muteDiv');
 
 const fadeOut = (delay) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            slogan.classList.add('sloganOut')
+            slogan.classList.add('sloganOut');
             resolve()
         }, delay);
 
     })
 };
-// async function fadeOut() {
-//     setTimeout(() => {
-//         slogan.classList.add('sloganOut')
-//         return "done"
-//     }, 3000);
-// }
-
 
 async function delayedRemoval() {
     setTimeout(() => {
