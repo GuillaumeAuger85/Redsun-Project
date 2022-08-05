@@ -1,41 +1,3 @@
-
-
-// sample and gallery linkButton
-const linkButtons = document.querySelectorAll('.linkButton')
-
-for (let button of linkButtons) {
-    button.addEventListener('pointerdown', () => {
-        button.style.backgroundColor = '#000';
-        button.style.color = '#fff';
-        button.style.borderRadius = '5%';
-        button.style.borderColor = "#fff"
-
-    })
-};
-for (let button of linkButtons) {
-    button.addEventListener('pointerup', () => {
-        button.style.backgroundColor = '#000';
-        button.style.color = '#fff';
-
-    })
-};
-
-
-
-//wait for video to load first frame to launch slogan animation
-const Slogan = document.querySelector('#slogan');
-const video = document.querySelector('#myVideo');
-const h2 = document.querySelector('#slogan>h2');
-const h4 = document.querySelector('#slogan>h4');
-const loader = document.querySelector('#preloader');
-
-video.addEventListener('loadeddata',()=>{
-    loader.style.display= "none";
-    Slogan.classList.add('slogan');
-    h2.classList.remove('d-none');
-    h4.classList.remove('d-none')
-})
-
 // fadeout message video / fadein unmutemutebutton video
 const slogan = document.querySelector('.slogan');
 const sloganparent = document.querySelector('.introVideo');
@@ -72,7 +34,43 @@ async function removeSlogan() {
     await addUnmuteButton();
 };
 
-removeSlogan();
+
+//wait for video to load first frame to launch slogan animation
+const Slogan = document.querySelector('#slogan');
+const video = document.querySelector('#myVideo');
+const h2 = document.querySelector('#slogan>h2');
+const h4 = document.querySelector('#slogan>h4');
+const loader = document.querySelector('#preloader');
+
+window.addEventListener('load',()=>{
+    loader.style.display= "none";
+    Slogan.classList.add('slogan');
+    h2.classList.remove('d-none');
+    h4.classList.remove('d-none');
+    removeSlogan();
+})
+
+// sample and gallery linkButton
+const linkButtons = document.querySelectorAll('.linkButton')
+
+for (let button of linkButtons) {
+    button.addEventListener('pointerdown', () => {
+        button.style.backgroundColor = '#000';
+        button.style.color = '#fff';
+        button.style.borderRadius = '5%';
+        button.style.borderColor = "#fff"
+
+    })
+};
+for (let button of linkButtons) {
+    button.addEventListener('pointerup', () => {
+        button.style.backgroundColor = '#000';
+        button.style.color = '#fff';
+
+    })
+};
+// removeSlogan();
+// Make mute appear central video mute button
 
 muteDiv.addEventListener('mousemove', () => {
     videoControls.style.display = 'block';
