@@ -1,54 +1,54 @@
-// fadeout message video / fadein unmutemutebutton video
-const slogan = document.querySelector('.slogan');
+//wait for video to load first frame to launch slogan animation
+const video = document.querySelector('#myVideo');
+const loader = document.querySelector('#preloader');
+
+window.addEventListener('load', () => {
+    loader.style.display = "none";
+    const Slogan = document.createElement('div');
+    sloganparent.appendChild(Slogan);
+    Slogan.classList.add('slogan');
+    const h4 = document.createElement('h4');
+    const h2 = document.createElement('h2');
+    Slogan.appendChild(h4);
+    Slogan.appendChild(h2);
+    h4.classList.add('text-center');
+    h2.classList.add('text-center');
+    h4.innerText = 'Make It Stand out';
+    h2.innerText = 'Fuse It with Sound';
+    removeSlogan();
+})
+
+// fadeout slogan video / fadein unmutemutebutton video
 const sloganparent = document.querySelector('.introVideo');
 const unmuteMuteButton = document.querySelector('#unmuteMuteButton');
 const videoControls = document.querySelector('#videoControls');
 const muteDiv = document.querySelector('#muteDiv');
 
-const fadeOut = (delay) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            Slogan.classList.add('sloganOut');
-            resolve()
-        }, delay);
-
-    })
-};
-
-async function delayedRemoval() {
-    setTimeout(() => {
-        sloganparent.removeChild(Slogan)
-        return 'done'
-    }, 800)
-};
-
-
-async function addUnmuteButton() {
-    unmuteMuteButton.src = "img/vol up.png";
-    unmuteMuteButton.classList.add('volUp');
-};
-
 async function removeSlogan() {
-    await fadeOut(3000);
+    const slogan = document.querySelector('.slogan');
+    const fadeOut = (delay) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                slogan.classList.add('sloganOut');
+                resolve()
+            }, delay);
+
+        })
+    };
+    async function delayedRemoval() {
+        setTimeout(() => {
+            sloganparent.removeChild(slogan)
+            return 'done'
+        }, 800)
+    };
+    async function addUnmuteButton() {
+        unmuteMuteButton.classList.add('turnVolOn');
+        unmuteMuteButton.src = "img/vol up.png";
+    };
+    await fadeOut(3500);
     await delayedRemoval();
     await addUnmuteButton();
 };
-
-
-//wait for video to load first frame to launch slogan animation
-const Slogan = document.querySelector('#slogan');
-const video = document.querySelector('#myVideo');
-const h2 = document.querySelector('#slogan>h2');
-const h4 = document.querySelector('#slogan>h4');
-const loader = document.querySelector('#preloader');
-
-window.addEventListener('load',()=>{
-    loader.style.display= "none";
-    Slogan.classList.add('slogan');
-    h2.classList.remove('d-none');
-    h4.classList.remove('d-none');
-    removeSlogan();
-})
 
 // sample and gallery linkButton
 const linkButtons = document.querySelectorAll('.linkButton')
@@ -69,9 +69,8 @@ for (let button of linkButtons) {
 
     })
 };
-// removeSlogan();
-// Make mute appear central video mute button
 
+// Make mute appear central video mute button
 muteDiv.addEventListener('mousemove', () => {
     videoControls.style.display = 'block';
     setTimeout(() => {
@@ -87,12 +86,12 @@ muteDiv.addEventListener('click', () => {
         sloganparent.classList.remove('controlsPosition');
         sloganparent.classList.add('elementsPosition');
         unmuteMuteButton.src = "img/vol mute.png";
-        unmuteMuteButton.classList.add('volUp');
+        unmuteMuteButton.classList.add('turnVolOn');
         videoControls.style.display = 'block';
         setTimeout(() => {
             videoControls.style.display = 'none';
             unmuteMuteButton.src = "";
-            unmuteMuteButton.classList.remove('volUp');
+            unmuteMuteButton.classList.remove('turnVolOn');
             muteDiv.classList.add('muteDivOn');
         }, 5000)
     } else {
@@ -100,12 +99,12 @@ muteDiv.addEventListener('click', () => {
         sloganparent.classList.remove('controlsPosition');
         sloganparent.classList.add('elementsPosition');
         unmuteMuteButton.src = "img/vol up.png";
-        unmuteMuteButton.classList.add('volUp');
+        unmuteMuteButton.classList.add('turnVolOn');
         videoControls.style.display = 'block';
         setTimeout(() => {
             videoControls.style.display = 'none';
             unmuteMuteButton.src = "";
-            unmuteMuteButton.classList.remove('volUp');
+            unmuteMuteButton.classList.remove('turnVolOn');
             muteDiv.classList.add('muteDivOn');
         }, 5000)
     }
@@ -119,7 +118,7 @@ unmuteMuteButton.addEventListener('click', function () {
         volRange.value = "0";
         muteUnmute.src = "img/vol mute.png";
         unmuteMuteButton.src = "";
-        unmuteMuteButton.classList.remove('volUp');
+        unmuteMuteButton.classList.remove('turnVolOn');
         videoControls.style.display = 'block';
         sloganparent.classList.remove('elementsPosition');
         sloganparent.classList.add('controlsPosition');
@@ -133,7 +132,7 @@ unmuteMuteButton.addEventListener('click', function () {
         volRange.value = saveVol;
         muteUnmute.src = "img/vol up.png";
         unmuteMuteButton.src = "";
-        unmuteMuteButton.classList.remove('volUp');
+        unmuteMuteButton.classList.remove('turnVolOn');
         videoControls.style.display = 'block';
         sloganparent.classList.remove('elementsPosition');
         sloganparent.classList.add('controlsPosition');
@@ -254,7 +253,7 @@ muteUnmute.addEventListener('click', () => {
         muteUnmute.src = "img/vol up.png";
         if (unmuteMuteButton.src = "img/vol up.png") {
             unmuteMuteButton.src = "";
-            unmuteMuteButton.classList.remove('volUp');
+            unmuteMuteButton.classList.remove('turnVolOn');
             sloganparent.classList.remove('elementsPosition');
             sloganparent.classList.add('controlsPosition');
             muteDiv.classList.remove('muteDivOff');
@@ -322,7 +321,7 @@ fullscreenPic.addEventListener('click', function (e) {
 
 sloganparent.addEventListener('dblclick', function (e) {
     unmuteMuteButton.src = "";
-    unmuteMuteButton.classList.remove('volUp');
+    unmuteMuteButton.classList.remove('turnVolOn');
     handleFullscreen();
 })
 
