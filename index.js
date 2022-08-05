@@ -42,7 +42,7 @@ const muteDiv = document.querySelector('#muteDiv');
 const fadeOut = (delay) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            slogan.classList.add('sloganOut');
+            Slogan.classList.add('sloganOut');
             resolve()
         }, delay);
 
@@ -51,7 +51,7 @@ const fadeOut = (delay) => {
 
 async function delayedRemoval() {
     setTimeout(() => {
-        sloganparent.removeChild(slogan)
+        sloganparent.removeChild(Slogan)
         return 'done'
     }, 800)
 };
