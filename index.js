@@ -3,6 +3,7 @@ const video = document.querySelector('#myVideo');
 const loader = document.querySelector('#preloader');
 
 window.addEventListener('load', () => {
+    video.addEventListener('loadeddata',()=>{})
     loader.style.display = "none";
     const Slogan = document.createElement('div');
     sloganparent.appendChild(Slogan);
