@@ -384,11 +384,19 @@ h2 .listenRedsun {
     .h1text {
         font-size: 1.3em;
     }
+    .turnVolOn {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 @media (max-width: 1078px) {
     .h1text {
         font-size: 1.1em;
+    }
+    .turnVolOn {
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -432,6 +440,10 @@ h2 .listenRedsun {
 
     .slogan>h2 {
         font-size: 2em
+    }
+    .turnVolOn {
+        width: 150px;
+        height: 150px;
     }
 
 }
