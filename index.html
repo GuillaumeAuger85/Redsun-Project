@@ -1,294 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="vids/yourself.mp4" as="video" type="video/mp4">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="index.js" as="script">
+    <link rel="preload" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="index.css">
     <title>Redsun</title>
 </head>
 
-<body>
-    <div id="preloader"></div>
-    <header>
-        <nav id="mainNavbar"
-            class="navbar navbar-expand-lg container-fluid navbar-dark justify-content-space-around fixed-top">
-            <a class="navbar-brand" href=""><img src="img/RedSunLogo2.png" width="60" height="60" alt="" loading="lazy"
-                    alt=""><span class="RedsunBrand">Redsun</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div class="container-fluid justify-content-center">
-                    <span class="navTitle navbar-text  ">From The Redsun</span>
-                </div>
-                <ul class="navbar-nav">
-                    <li class="nav-item  active pr-5">
-                        <a class="nav-link" href="">Samples <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active pr-5  ">
-                        <a class="nav-link" href="">Gallery</a>
-                    </li>
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <button id="scrollToTop">
-        <img src="img/topscrllbtn2.png" width="60" height="60" alt="">
-    </button>
-    <main>
-        <section class="introVideo elementsPosition ">
-            <video autoplay muted loop id="myVideo">
-                <source src="vids/yourself.mp4" type="video/mp4">
-            </video>
-            <img id="unmuteMuteButton" src="" alt="">
-            <div id="muteDiv" class="muteDivOff"></div>
-            <div id="controlsWrap">
-                <div id="videoControls">
-                    <img id='playPausePic' src="img/pause.png" alt="">
-                    <img id="fullscreenPic" src="img/fullscreen.png" alt="">
-                    <div id="volWrap">
-                        <img id="muteUnmute" src="img/vol up.png" alt="">
-                        <div id="rangeWrap" class="rangeDisplayOff">
-                            <input type="range" id="volRange" step="0.01" min="0" max="1" value="1">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-smooth-scroll="true">
+    <div id="preloader">
+        <svg id="logo" width="354" height="57" viewBox="0 0 354 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M53.9042 20.1749C53.9042 22.324 53.6386 24.2437 53.1073 25.934C52.5761 27.6243 51.8517 29.1214 50.9341 30.4253C50.0406 31.7051 49.0023 32.8038 47.8191 33.7214C46.6359 34.639 45.3923 35.3996 44.0884 36.0033C42.8086 36.5828 41.5046 37.0054 40.1765 37.271C38.8726 37.5366 37.6411 37.6695 36.482 37.6695L56.1498 54.6569H41.5892L21.9576 37.6695H15.1843V28.2521H36.482C37.6653 28.1555 38.7398 27.914 39.7057 27.5277C40.6957 27.1172 41.5409 26.5739 42.2411 25.8977C42.9655 25.2216 43.5209 24.4127 43.9073 23.471C44.2936 22.5051 44.4868 21.4064 44.4868 20.1749V14.2347C44.4868 13.7035 44.4144 13.305 44.2695 13.0394C44.1487 12.7497 43.9797 12.5444 43.7624 12.4237C43.5692 12.2788 43.3519 12.1943 43.1104 12.1701C42.8931 12.146 42.6878 12.1339 42.4947 12.1339H11.4174V54.6569H2V7.46144C2 6.80947 2.12074 6.19372 2.36221 5.61419C2.60368 5.03466 2.92966 4.52757 3.34016 4.09292C3.77481 3.65828 4.2819 3.32022 4.86143 3.07875C5.44096 2.83727 6.06878 2.71654 6.7449 2.71654H42.4947C44.5955 2.71654 46.3703 3.10289 47.8191 3.8756C49.2679 4.62416 50.4391 5.57797 51.3325 6.73703C52.2501 7.87194 52.9021 9.10344 53.2884 10.4315C53.6989 11.7596 53.9042 13.0032 53.9042 14.1623V20.1749Z"
+                stroke="#DB0202" stroke-width="3" />
+            <path
+                d="M106.062 33.4316H76.3247V23.9418H106.062V33.4316ZM110.3 54.6569H76.3247C75.0208 54.6569 73.5961 54.4275 72.0507 53.9687C70.5053 53.5099 69.0685 52.7614 67.7405 51.7231C66.4365 50.6606 65.3378 49.2963 64.4444 47.6301C63.5751 45.9398 63.1404 43.8753 63.1404 41.4364V7.46144C63.1404 6.80947 63.2612 6.19372 63.5026 5.61419C63.7441 5.03466 64.0701 4.52757 64.4806 4.09292C64.9152 3.65828 65.4223 3.32022 66.0019 3.07875C66.5814 2.83727 67.2092 2.71654 67.8853 2.71654H110.3V12.1339H72.5578V41.4364C72.5578 42.6679 72.8838 43.6096 73.5358 44.2616C74.1877 44.9136 75.1415 45.2396 76.3972 45.2396H110.3V54.6569Z"
+                stroke="#DB0202" stroke-width="3" />
+            <path
+                d="M171.259 32.9245C171.259 36.0878 170.704 38.9975 169.593 41.6537C168.506 44.3099 166.997 46.6039 165.065 48.5356C163.134 50.4433 160.84 51.9404 158.183 53.027C155.527 54.1136 152.642 54.6569 149.527 54.6569H124.1C123.424 54.6569 122.796 54.5362 122.216 54.2947C121.637 54.0533 121.13 53.7273 120.695 53.3168C120.285 52.8821 119.959 52.375 119.717 51.7955C119.476 51.216 119.355 50.5881 119.355 49.912V7.46144C119.355 6.80947 119.476 6.19372 119.717 5.61419C119.959 5.03466 120.285 4.52757 120.695 4.09292C121.13 3.65828 121.637 3.32022 122.216 3.07875C122.796 2.83727 123.424 2.71654 124.1 2.71654H149.527C152.642 2.71654 155.527 3.25985 158.183 4.34647C160.84 5.43309 163.134 6.94228 165.065 8.87405C166.997 10.7817 168.506 13.0756 169.593 15.756C170.704 18.4121 171.259 21.3098 171.259 24.4489V32.9245ZM161.842 24.4489C161.842 22.6137 161.54 20.9355 160.936 19.4143C160.357 17.893 159.524 16.6011 158.437 15.5386C157.35 14.452 156.046 13.6189 154.525 13.0394C153.028 12.4357 151.362 12.1339 149.527 12.1339H128.772V45.2396H149.527C151.362 45.2396 153.028 44.9498 154.525 44.3703C156.046 43.7666 157.35 42.9335 158.437 41.871C159.524 40.7844 160.357 39.4926 160.936 37.9954C161.54 36.4742 161.842 34.7839 161.842 32.9245V24.4489Z"
+                stroke="#DB0202" stroke-width="3" />
+            <path
+                d="M230.407 39.3718C230.407 41.2311 230.166 42.9094 229.683 44.4065C229.224 45.8795 228.608 47.1834 227.836 48.3183C227.063 49.4532 226.157 50.4191 225.119 51.216C224.081 52.0128 223.006 52.6648 221.895 53.1719C220.785 53.679 219.65 54.0533 218.491 54.2947C217.356 54.5362 216.281 54.6569 215.267 54.6569H178.938V45.2396H215.267C217.078 45.2396 218.479 44.7083 219.469 43.6459C220.483 42.5834 220.99 41.1587 220.99 39.3718C220.99 38.5025 220.857 37.7057 220.592 36.9813C220.326 36.2568 219.94 35.629 219.432 35.0978C218.95 34.5666 218.346 34.156 217.621 33.8663C216.921 33.5765 216.136 33.4316 215.267 33.4316H193.607C192.086 33.4316 190.444 33.166 188.681 32.6348C186.918 32.0794 185.276 31.198 183.755 29.9907C182.258 28.7833 181.002 27.2017 179.988 25.2458C178.998 23.2899 178.503 20.8993 178.503 18.0741C178.503 15.2489 178.998 12.8704 179.988 10.9386C181.002 8.98271 182.258 7.40107 183.755 6.19372C185.276 4.96222 186.918 4.08085 188.681 3.54961C190.444 2.99423 192.086 2.71654 193.607 2.71654H225.662V12.1339H193.607C191.82 12.1339 190.42 12.6772 189.406 13.7638C188.416 14.8505 187.921 16.2872 187.921 18.0741C187.921 19.8851 188.416 21.3219 189.406 22.3843C190.42 23.4227 191.82 23.9418 193.607 23.9418H215.267H215.34C216.354 23.966 217.428 24.1109 218.563 24.3765C219.698 24.6179 220.821 25.0043 221.932 25.5355C223.067 26.0668 224.141 26.7429 225.155 27.5639C226.17 28.3607 227.063 29.3266 227.836 30.4615C228.633 31.5965 229.26 32.9004 229.719 34.3734C230.178 35.8463 230.407 37.5125 230.407 39.3718Z"
+                stroke="#DB0202" stroke-width="3" />
+            <path
+                d="M289.121 49.912C289.121 50.5881 289 51.216 288.759 51.7955C288.517 52.375 288.179 52.8821 287.745 53.3168C287.31 53.7273 286.803 54.0533 286.223 54.2947C285.644 54.5362 285.028 54.6569 284.376 54.6569H263.151C261.147 54.6569 259.118 54.4396 257.066 54.005C255.013 53.5703 253.021 52.9063 251.089 52.0128C249.182 51.0952 247.383 49.9362 245.692 48.5356C244.002 47.1351 242.517 45.481 241.237 43.5734C239.982 41.6416 238.992 39.4443 238.267 36.9813C237.543 34.4941 237.181 31.7293 237.181 28.6867V2.71654H246.598V28.6867C246.598 31.3429 246.96 33.5886 247.685 35.4238C248.433 37.259 249.375 38.7923 250.51 40.0238C251.645 41.2553 252.888 42.2212 254.24 42.9214C255.593 43.6217 256.873 44.1409 258.08 44.4789C259.311 44.817 260.386 45.0343 261.304 45.1309C262.245 45.2033 262.861 45.2396 263.151 45.2396H279.704V2.71654H289.121V49.912Z"
+                stroke="#DB0202" stroke-width="3" />
+            <path
+                d="M352 50.6364C352 51.3126 351.867 51.9404 351.602 52.5199C351.36 53.0994 351.022 53.6065 350.587 54.0412C350.177 54.4517 349.682 54.7777 349.102 55.0191C348.523 55.2606 347.907 55.3813 347.255 55.3813C346.676 55.3813 346.084 55.2727 345.48 55.0554C344.901 54.838 344.382 54.4879 343.923 54.005L309.513 18.0741V54.6569H300.096V6.73703C300.096 5.77115 300.361 4.90185 300.893 4.12914C301.448 3.33229 302.148 2.74069 302.993 2.35433C303.887 1.99213 304.805 1.90761 305.746 2.10079C306.688 2.26982 307.497 2.70447 308.173 3.40473L342.583 39.2994V2.71654H352V50.6364Z"
+                stroke="#DB0202" stroke-width="3" />
+        </svg>
+    </div>
+    <div class="d-none" id="hide">
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+                <div class="container-fluid ps-0">
+                    <a class="navbar-brand ms-0 ps-0" href="#"><img src="img/RedSunLogo.png" width="60" height="60"
+                            alt="Redsun logo" loading="lazy" alt=""></a>
+                    <div class="navbar-text">Redsun</div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="#sgContainer">Samples</a>
+                            <a class="nav-link" href="#gallery">Listen to Redsun</a>
+                            <a class="nav-link" href="#contact">Contact</a>
                         </div>
                     </div>
-                    <progress id="progress" value="0" min="0">
-                        <span id="progressBar"></span>
-                    </progress>
                 </div>
-            </div>
-            <!-- <div id="slogan" class="">
-                <h4 class=" text-center d-none">Make It Stand out</h4>
-                <h2 class=" text-center d-none">Fuse It with Sound</h2>
-            </div> -->
-        </section>
-        <section id="sgContainer">
-            <div class="container-fluid pt-5 h1Container">
-                <h1 class=" text-center"><span class="h1text">Expand your sonic landscape</span></h1>
-                <section class="container-fluid mixerContainer">
-                    <div class="row textRow align-items-center">
-                        <div class="col-lg-1"></div>
-                        <div class=" col-lg-3" data-inviewport="scale-in">
-                            <p class="sampletext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                                dolorem
-                                sed
-                                aliquam, quibusdam alias placeat,
-                            </p>
+            </nav>
+        </header>
+        <button id="scrollToTop" class="d-none">
+            <img loading="lazy" src="img/topscrllbtn.png" width="60" height="60" alt="sroll to top">
+        </button>
+        <main>
+            <section id="home" class="elementsPosition">
+                <video autoplay muted loop id="myVideo">
+                    <source src="vids/yourself.mp4" type="video/mp4">
+                </video>
+                <img loading="lazy" id="unmuteMuteButton" src="" alt="">
+                <div id="muteDiv" class="muteDivOff"></div>
+                <div id="controlsWrap">
+                    <div id="videoControls">
+                        <img loading="lazy" id='playPausePic' src="img/pause.png" alt="play">
+                        <img loading="lazy" id="fullscreenPic" src="img/fullscreen.png" alt="fullscreen">
+                        <div id="volWrap">
+                            <img loading="lazy" id="muteUnmute" src="img/vol up.png" alt="mute unmute">
+                            <div id="rangeWrap" class="rangeDisplayOff">
+                                <input type="range" id="volRange" step="0.01" min="0" max="1" value="1">
+                            </div>
                         </div>
-                        <div class="textBorder col-lg-3" data-inviewport="scale-in">
-                            <p class="sampletext">, laboriosam accusamus assumenda? Deleniti expedita
-                                dignissimos
-                                id? Est, eligendi ex. Esse, ipsa.hic totam ipsum
-                            </p>
+                        <progress id="progress" value="0" min="0">
+                            <span id="progressBar"></span>
+                        </progress>
+                    </div>
+                </div>
+                <a href="#sgContainer">
+                    <div class="scrolldown"></div>
+                </a>
+            </section>
+            <section id="sgContainer">
+                <div class="container-fluid pt-5">
+                    <h1 class=" text-center p-4">Expand your sonic landscape</h1>
+                    <section class="container-fluid">
+                        <h4 class="row justify-content-center text-white fw-semibold pt-4 fs-2 mb-0 pb-4">Within a few
+                            clicks, browse, purchase and make your
+                            work
+                            outstanding.</h4>
+                        <div class="row align-items-center pb-5 pt-3">
+                            <div class=" col-lg-3 offset-lg-1">
+                                <p class="sampletext fw-semibold" data-inviewport="scale-in">Our mission is to provide
+                                    the best
+                                    tools for
+                                    modern creators. We offer high-quality sound to help you
+                                    build your next masterpiece.
+                                </p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p class="sampletext fw-semibold" data-inviewport="scale-in">Go checkout our beats
+                                    catalog
+                                    hosted on
+                                    these dedicated paltforms.
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-xl-6 d-flex justify-content-center">
+                                        <div>
+                                            <a href="https://airbit.com/" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+                                                    src="img/airbit.svg" alt="airbit logo" style="width:234px;height:73px"
+                                                    class="mb-xl-5 mt-3 svg">
+                                            </a>
+                                            <a href="https://splice.com/" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+                                                    src="img/splice.svg" alt="splice logo" style="width:234px;height:73px"
+                                                    class="mt-3 svg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 d-flex justify-content-center">
+                                        <div>
+                                            <a href="https://www.modernproducers.com/" target="_blank"
+                                                rel="noopener noreferrer"><img loading="lazy" src="img/modernproducers .svg" alt="modern producers logo"
+                                                    style="width:234px;height:73px" class="mb-xl-5 mt-3 svg">
+                                            </a>
+                                            <a href="https://www.roqstar.io/" target="_blank"
+                                                rel="noopener noreferrer"><img loading="lazy" src="img/roqstar.svg" alt="roqstar logo"
+                                                    style="width:234px;height:73px" class="mt-3 svg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-5 d-flex justify-content-center">
-                            <a class="lnkBtn" href="Redsun Samples.html">
-                                <div class="linkButton d-flex justify-content-center align-items-center ">Samples
+                    </section>
+                    <img loading="lazy" src="img/adi-goldstein-nORcjIaDVLg-unsplash.jpg" alt="mix table">
+                </div>
+            </section>
+            <section id="gallery">
+                <div class="container-fluid pt-4 ">
+                    <h2 class=" text-center pt-5"> Listen to Redsun <img loading="lazy" src="img/headphones.svg" alt="headphones image"></h2>
+                    <div class=" container">
+                        <div class="row text-center mt-0">
+                            <div class=" col-lg-4 my-3  ">
+                                <div class="logoEnlarger"><a target="_blank"
+                                        href="https://soundcloud.com/user-855536545">
+                                        <img  loading="lazy" class="webLink" src="img/soundcloud logo.png" alt="soundcloud logo">
+                                    </a></div>
+                                <iframe  data-inviewport="scale-in" class="embeds "
+                                    scrolling="no" frameborder="no"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1036696012&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    scrolling="no" frameborder="no"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    scrolling="no" frameborder="no"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/782488984&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            </div>
+                            <div class=" col-lg-4 my-3  ">
+                                <div class="logoEnlarger"><a target="_blank"
+                                        href="https://redsunfrequency.bandcamp.com/">
+                                        <img loading="lazy" class="webLink" src="img/bandecamp logo.png" alt="bandcamp logo">
+                                    </a></div>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="" seamless><a
+                                        href="https://redsunfrequency.bandcamp.com/track/king-of-the-world">King
+                                        of the World by From the Redsun
+                                    </a>
+                                </iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="" seamless><a
+                                        href="https://redsunfrequency.bandcamp.com/track/beauty-strikes">beauty
+                                        strikes by Redsun
+                                    </a>
+                                </iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="" seamless><a href="https://redsunfrequency.bandcamp.com/track/numb">NUMB by
+                                        Redsun
+                                    </a>
+                                </iframe>
+                            </div>
+                            <div class=" col-lg-4 my-3  ">
+                                <div class="logoEnlarger"><a target="_blank"
+                                        href="https://www.youtube.com/channel/UCAkAfPphE8N-D2foPV1X2ig">
+                                        <img loading="lazy" class="webLink" src="img/youtubeLogo.png" alt="youtube logo">
+                                    </a></div>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="https://www.youtube-nocookie.com/embed/X5Z5uI0IUcQ"
+                                    title="YouTube video player" frameborder="0" allowfullscreen>
+                                </iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="https://www.youtube-nocookie.com/embed/iggX2fk4u-I"
+                                    title="YouTube video player" frameborder="0" allowfullscreen>
+                                </iframe>
+                                <iframe  data-inviewport="scale-in" class="embeds"
+                                    src="https://www.youtube-nocookie.com/embed/w0DTAuPZHy8"
+                                    title="YouTube video player" frameborder="0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="container-fluid g-0">
+                <div class="px-3 py-5">
+                    <p class=" text-center text-white fs-5 mb-0 pt-4">Business inquiries</p>
+                    <h2 class=" text-center pb-4">Contact us</h2>
+                    <div class="col-md-4 offset-md-4">
+                        <form class="row validated-form" action="https://formsubmit.co/your@email.com" method="POST"
+                            novalidate>
+                            <div class="col-6 mb-5">
+                                <label class="form-label text-light" for="name ">First Name:</label>
+                                <input type="text" class="form-control" id="name" name="firstName"
+                                    aria-describedby="Name" required>
+                                <div class="valid-feedback">
+                                    looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter your name!
+                                </div>
+                            </div>
+                            <div class="col-6 mb-5">
+                                <label class="form-label text-light" for="name ">Last Name:</label>
+                                <input type="text" class="form-control" id="name" name="lastName"
+                                    aria-describedby="Name" required>
+                                <div class="valid-feedback">
+                                    looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter your last name!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputEmail" class="form-label text-light">Email:</label>
+                                <input type="email" class="form-control" id="inputEmail" name="email"
+                                    aria-describedby="emailHelp" required>
+                                <div id="emailHelp" class="form-text text-light">We'll never share your email with
+                                    anyone
+                                    else.</div>
+                                <div class="valid-feedback">
+                                    looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please your mail adress!
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label class="form-label text-light" for="subject ">Subject:</label>
+                                <input type="text" class="form-control" id="_subject" name="subject"
+                                    aria-describedby="Subject" required>
+                                <div class="valid-feedback">
+                                    looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a subject!
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label for="textarea" class="form-label text-light">Message:</label>
+                                <textarea class="form-control" id="textarea" rows="3" name="textarea"
+                                    required></textarea>
+                                <div class="valid-feedback">
+                                    looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a message!
+                                </div>
+                            </div>
+                            <div class="col-md-2 offset-md-5">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <nav class="container-fluid">
+                <div class="row pt-5"></div>
+                <div class="row d-flex ">
+                    <div class="col-lg-3 "></div>
+                    <ul class="footerLinks col-lg-1 ">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sgContainer">Samples</a></li>
+                        <li><a href="#gallery">Listen</a></li>
+                        <li><a id="redLink" href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2">
+                        <p class="text-center">Sound design studio specialized in samples creation to empower your
+                            content.
+                            We develop sound samples so you can enhance your tunes set your lyrics to music
+                            or musicaly boost your videos.
+                        </p>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <ul class="footerLinks col-lg-1 ">
+                        <li><a target="_blank" href="https://www.instagram.com/?hl=fr">
+                                <div class="bigRound">
+                                    <div class="square">
+                                        <div class="rectangle">
+                                            <div class="point"></div>
+                                        </div>
+                                        <div class="smRound"></div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/">
+                                <div class="bigRound ">
+                                    <div>f</div>
                                 </div>
                             </a>
-                        </div>
+                        </li>
+                    </ul>
+                    <div class="col-lg-3"></div>
+                </div>
+                <div class="row lowerRow">
+                    <div class="col-md-6 offset-md-3 mt-4">Copyright
+                        <img loading="lazy" src="img/copyright.png" width="20px" height="20px" alt="copyright logo"> 2022 Redsun&centerdot;All
+                        rights
+                        reserved
                     </div>
-                </section>
-                <img src="img/adi-goldstein-nORcjIaDVLg-unsplash.jpg" alt="">
-
-            </div>
-        </section>
-        <section class=" rdsnLnkContainer mixerContainer ">
-            <div class="container-fluid linkWrap ">
-                <h2 class=" text-center pt-5"><span class="listenRedsun"> Listen to Redsun</span></h2>
-                <div class="logoContainer container">
-                    <div class="row text-center mt-0">
-                        <div class=" col-lg-4 my-3  ">
-                            <div class="logoEnlarger"><a target="_blank" href="https://redsunfrequency.bandcamp.com/">
-                                    <img class="webLink" src="img/bandecamp logo.png" alt="">
-                                </a></div>
-                            <iframe data-inviewport="scale-in" class="embeds " style=" width: 300px; height: 400px;"
-                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
-                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
-                                    Loup
-                                    by Redsun</a></iframe>
-                            <iframe data-inviewport="scale-in" class="embeds" style=" width: 300px; height: 400px;"
-                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
-                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
-                                    Loup
-                                    by Redsun</a></iframe>
-                            <iframe data-inviewport="scale-in" class="embeds" style=" width: 300px; height: 400px;"
-                                src="https://bandcamp.com/EmbeddedPlayer/track=602221951/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/transparent=true/"
-                                seamless><a href="https://redsunfrequency.bandcamp.com/track/petit-loup">Petit
-                                    Loup
-                                    by Redsun</a></iframe>
-                        </div>
-                        <div class=" col-lg-4 my-3  ">
-                            <div class="logoEnlarger"><a target="_blank" href="https://soundcloud.com/user-855536545">
-                                    <img class="webLink" src="img/soundcloud logo.png" alt="">
-                                </a></div>
-                            <iframe data-inviewport="scale-in" class="embeds " width="300px" height="400px"
-                                scrolling="no" frameborder="no"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <!-- <div
-                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a> <a
-                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
-                                    title="Sound Of Silence" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a>
-                            </div> -->
-                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
-                                scrolling="no" frameborder="no"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <!-- <div
-                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a> <a
-                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
-                                    title="Sound Of Silence" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a>
-                            </div> -->
-                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
-                                scrolling="no" frameborder="no"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1022907361&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <!-- <div
-                                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                                <a href="https://soundcloud.com/user-855536545" title="Redsun" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a> <a
-                                    href="https://soundcloud.com/user-855536545/sound-of-silence"
-                                    title="Sound Of Silence" target="_blank"
-                                    style="color: #cccccc; text-decoration: none;"></a>
-                            </div> -->
-                        </div>
-                        <div class=" col-lg-4 my-3  ">
-                            <div class="logoEnlarger"><a target="_blank"
-                                    href="https://www.youtube.com/channel/UCAkAfPphE8N-D2foPV1X2ig">
-                                    <img class="webLink" src="img/youtube logo.png" alt="">
-                                </a></div>
-                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
-                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
-                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            <iframe data-inviewport="scale-in" class="embeds" width="300px" height="400px"
-                                src="https://www.youtube.com/embed/w0DTAuPZHy8" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-        <section class="container-fluid logobckgrnd">
-            <div class="row textRow align-items-center hideVideo">
-                <div class="col-md-2"></div>
-                <div class=" col-md-4 pt-5">
-                    <p class="gallerytext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                        dolorem
-                        sed
-                        aliquam, quibusdam
-                        alias placeat, hic totam ipsum, laboriosam accusamus assumenda? Deleniti expedita
-                        dignissimos
-                        id? Est, eligendi ex. Esse, ipsa.
-                    </p>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                    <a class="lnkBtn" href="Redsun gallery.html">
-                        <div class="linkButton d-flex justify-content-center align-items-center ">Gallery
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="footer">
-        <nav class="container-fluid footerNav">
-            <div class="row upperRow"></div>
-            <div class="row d-flex ">
-                <div class="col-lg-3 "></div>
-                <ul class="footerLink footerLinks col-lg-1 ">
-                    <li class="navLink"><a class="colorLink" href="">Projects</a></li>
-                    <li class="navLink"><a class="colorLink" href="">Samples</a></li>
-                    <li class="navLink"><a class="colorLink" href="">Gallery</a></li>
-                    <li class="navLink"><a class="colorLink" href="">Contact</a></li>
-                </ul>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-2">
-                    <p>Sound design studio specialized in samples creation to empower your content.
-                        We develop sound samples so you can enhance your tunes set your lyrics to music
-                        or musicaly boost yours videos.
-                    </p>
-                </div>
-                <div class="col-lg-1"></div>
-                <ul class="footerLink footerLinks col-lg-1 ">
-                    <li class="navLink"><a target="_blank" href="https://www.instagram.com/?hl=fr">
-                            <div class="bigRound borderColor">
-                                <div class="square borderColor">
-                                    <div class="rectangle borderColor">
-                                        <div class="point borderColor"></div>
-                                    </div>
-                                    <div class="smRound borderColor"></div>
-                                </div>
-                            </div>
-                        </a></li>
-                    <li class="navLink"><a target="_blank" href="https://www.facebook.com/">
-                            <div class="bigRound borderColor">
-                                <div class="borderColor">f</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="col-lg-3"></div>
-            </div>
-            <div class="container-fluid lowerRow">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8 footerLine">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6 mt-4 footerCopyright"><img src="img/copyright-64.png" width="20px" height="20px"
-                                        alt="">2022 Redsun<span class="tandc">&centerdot;</span>Privacy policy<span
-                                        class="tandc">&centerdot;</span>Terms Of Service</div>
-                                <div class="col-md-6 mt-4 footerMail">Contact us:<a href=""
-                                        class="footerContact"> RedsunFrequency@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-        </nav>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            </nav>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-        crossorigin="anonymous"></script>
-    <script src="nav.js"></script>
     <script src="index.js"></script>
 </body>
 

@@ -1,105 +1,116 @@
+/* svg intro animation */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#preloader {
+    width: 100%;
+    height: 100vh;
+    background-color: #1A1A1A;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fill-letters 0.9s ease forwards infinite 3s;
+}
+
+#logo path:nth-of-type(1) {
+    stroke-dasharray: 682;
+    stroke-dashoffset: 682;
+    animation: line-anim 3.5s ease forwards;
+}
+
+#logo path:nth-of-type(2) {
+    stroke-dasharray: 667;
+    stroke-dashoffset: 667;
+    animation: line-anim 3.5s ease forwards 0.3s;
+}
+
+#logo path:nth-of-type(3) {
+    stroke-dasharray: 597;
+    stroke-dashoffset: 597;
+    animation: line-anim 3.5s ease forwards 0.6s;
+}
+
+#logo path:nth-of-type(4) {
+    stroke-dasharray: 645;
+    stroke-dashoffset: 645;
+    animation: line-anim 3.5s ease forwards 0.9s;
+}
+
+#logo path:nth-of-type(5) {
+    stroke-dasharray: 531;
+    stroke-dashoffset: 531;
+    animation: line-anim 3.5s ease forwards 1.2s;
+}
+
+#logo path:nth-of-type(6) {
+    stroke-dasharray: 601;
+    stroke-dashoffset: 601;
+    animation: line-anim 3.5s ease forwards 1.5s;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill-letters {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: #db0202;
+    }
+}
+
+/*body*/
 body {
-    overflow-x: hidden;
-}
-
-h1 {
-    margin-bottom: 1em;
-}
-
-.h1Container {
     background-color: #000;
-    padding: 0px 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.mixerContainer {
-    background-image: url("img/equalizer.png");
-    background-attachment: fixed;
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* Header navbar */
+.navbar {
+    padding: 0em 1em;
+    background-color: #1a1a1a;
+    --bs-navbar-nav-link-padding-x: 0.5rem;
+    --bs-navbar-active-color: #db0202;
+    --bs-nav-link-hover-color: var(--bs-navbar-ative-color);
 }
 
-.h1text {
+.navbar-text {
+    position: absolute;
+    left: 47%;
+    font-size: 1.7em;
     color: #fff;
-    /* border-bottom: 2px solid #fff; */
-    font-size: 1.5em;
     font-family: Audiowide;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 0.2em;
+    letter-spacing: 0em;
     text-transform: none;
+    line-height: 1.2em;
 }
 
-.sampletext, .gallerytext {
-    font-size: 2em;
-    font-weight: 100;
-    color: #fff;
+/* scrollToTop */
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    z-index: 999;
 }
 
-[data-inviewport="scale-in"] {
-    transition: 2s;
-    transform: scale(0.1);
-}
-
-[data-inviewport="scale-in"].is-inViewport {
-    transform: scale(1);
-}
-
-#sgContainer .textRow {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.705);
-}
-
-.logobckgrnd {
-    background-image: url("img/redsunWallpaper.png");
-    background-attachment: fixed;
-    background-position: 50% 0%;
-    background-repeat: repeat;
-    background-size: contain;
-}
-
-.textRow {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.705);
-}
-
-/* .textBorder {
-    border-left: 1px solid #fff;
-} */
-
-.h1Container img {
-    object-fit: cover;
-    width: 100%;
-    height: 50vh;
-}
-
-.linkWrap {
-    background-color: rgba(0, 0, 0, 0.705);
-}
-
-.linkButton {
-    background-color: #820d0d;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 300;
-    width: 157.61px;
-    height: 66px;
-    border: 3px solid #fff;
-    border-radius: 1000px 1000px 1000px 1000px;
-}
-
-.lnkBtn:hover {
-    text-decoration: none;
-}
-
-.linkButton:hover {
-    /* color: #1a1a1a; */
-    border-color: #fff;
-    transform: translateY(-0.2em);
-    box-shadow: 0em 0.5em 0.5em -0.1em #db0202;
-    /* border-radius: 0%; */
-}
-
+/* home */
 #myVideo {
     width: 100%;
     height: 100%;
@@ -111,9 +122,10 @@ h1 {
     z-index: -999;
 }
 
-.introVideo {
+#home {
     position: relative;
-    height: 94vh;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .elementsPosition {
@@ -195,7 +207,6 @@ h1 {
     height: 35px;
     width: 180px;
     float: right;
-    /* transform: rotate(0.75turn) translateX(41%); */
 }
 
 .rangeDisplayOff {
@@ -236,7 +247,6 @@ h1 {
     width: 30px;
     height: 30px;
     border-radius: 50% 0 0 50%;
-    /* transform: rotate(0.25turn); */
 }
 
 #fullscreenPic {
@@ -272,7 +282,6 @@ h1 {
     align-items: center;
     justify-content: center;
     width: 100%;
-    /* height: 66vh; */
     font-family: Audiowide;
     font-weight: 400;
     font-style: normal;
@@ -295,7 +304,6 @@ h1 {
 }
 
 .slogan>h2 {
-    font-size: 5em;
     animation: slidein ease 1500ms;
     animation-iteration-count: 1
 }
@@ -344,19 +352,109 @@ h1 {
     }
 }
 
-.hideVideo {
-    margin-top: 20em;
+.slideTop {
+    animation: slideTop 1s ease-out;
 }
 
-h2 .listenRedsun {
-    font-size: 2em;
+@keyframes slideTop {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(0, -100%);
+    }
+}
+
+.scrolldown {
+    bottom: 8%;
+    left: 50%;
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    border: 4px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 99;
+}
+
+.scrolldown:hover {
+    background-color: #39464ab0;
+}
+
+.scrolldown::before,
+.scrolldown::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scrollDown 1s ease-in-out infinite;
+}
+
+.scrolldown::after {
+    animation-delay: 0.35s;
+    top: 20%;
+}
+
+/* sgContainer */
+h1 {
+    margin-bottom: 0.5em;
+    color: #fff;
+    font-size: 3.8em;
     font-family: Audiowide;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0.2em;
     text-transform: none;
-    color: #f1f1f1;
-    /* border-bottom: 2px solid #fff; */
+}
+
+#sgContainer>div {
+    background-color: #000;
+    padding: 0px 0px;
+}
+
+h1+section, #gallery {
+    background-image: url("img/equalizer.png");
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sampletext {
+    font-size: 1.9em;
+    font-weight: 100;
+    color: #fff;
+}
+
+/* gallery */
+
+[data-inviewport="scale-in"] {
+    transition: 2s;
+    transform: scale(0.1);
+}
+
+[data-inviewport="scale-in"].is-inViewport {
+    transform: scale(1);
+}
+
+h1+section>div:nth-of-type(1), #contact>div:nth-of-type(1), h1+section>h4, #gallery>div:nth-of-type(1) {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.548);
+}
+
+
+#sgContainer>div img {
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
 }
 
 .webLink {
@@ -373,6 +471,8 @@ h2 .listenRedsun {
 .embeds {
     margin-bottom: 3em;
     border: 1px solid #fff;
+    width: 300px;
+    height: 400px;
 }
 
 .logoEnlarger {
@@ -380,10 +480,156 @@ h2 .listenRedsun {
     width: 100%;
 }
 
-@media (max-width:1250px) {
-    .h1text {
-        font-size: 1.3em;
+/* footer */
+footer>nav {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+}
+
+#contact {
+    background-image: url("img/redsunWallpaper.png");
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li a {
+    color: #fff;
+}
+
+#redLink {
+    color: #db0202;
+}
+
+ul li a:hover, ul li a:focus {
+    color: #db0202;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top: 1px solid #fff;
+    padding-top: 1em;
+    padding-left: 0em;
+}
+
+footer {
+    background-color: #1A1A1A;
+}
+/* instagran and facbook drawn with css */
+.bigRound {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.square {
+    width: 22px;
+    height: 22px;
+    border: 0.1em solid #fff;
+    border-radius: 25%;
+}
+
+.rectangle {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 8px;
+    border-bottom: 2px solid #fff;
+}
+
+.point {
+    background-color: #fff;
+    width: 3px;
+    height: 3px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.smRound {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+}
+
+.lowerRow {
+    padding-bottom: 1.5em;
+    margin: 0% 25%;
+    margin-top: 1.4em;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding-bottom: 1.5em;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+#contact>div:nth-of-type(1) {
+    margin-top: 20em;
+}
+
+h2 {
+    font-size: 3.5em;
+    font-family: Audiowide;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: #f1f1f1;
+}
+
+/* mediaqueries */
+@keyframes scrollDown {
+    0% {
+        opacity: 0;
     }
+
+    30% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0%;
+        top: 80%
+    }
+}
+
+@media (max-width:1250px) {
+    h1 {
+        font-size: 3.4em;
+    }
+
     .turnVolOn {
         width: 250px;
         height: 250px;
@@ -391,18 +637,37 @@ h2 .listenRedsun {
 }
 
 @media (max-width: 1078px) {
-    .h1text {
-        font-size: 1.1em;
+    h1 {
+        font-size: 3.1em;
     }
+
     .turnVolOn {
         width: 200px;
         height: 200px;
     }
 }
 
+@media(max-width:991px) {
+    .footerLinks {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 15%;
+        width: 70%
+    }
+
+    footer>Nav p {
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    .navbar-text {
+        position: unset;
+    }
+}
+
 @media (max-width: 850px) {
-    .h1text {
-        font-size: 0.9em;
+    h1 {
+        font-size: 3.0em;
     }
 }
 
@@ -413,12 +678,6 @@ h2 .listenRedsun {
 
     .slogan>h2 {
         font-size: 3.5em
-    }
-}
-
-@media (max-width:620px) {
-    .h1text {
-        padding-bottom: 0em;
     }
 }
 
@@ -441,18 +700,10 @@ h2 .listenRedsun {
     .slogan>h2 {
         font-size: 2em
     }
+
     .turnVolOn {
         width: 150px;
         height: 150px;
     }
 
-}
-
-#preloader {
-    background: #000 url(img/Loader.gif) no-repeat center;
-    background-size: 10%;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
 }
