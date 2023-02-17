@@ -1,4 +1,4 @@
-# Redsun-Project
+# Redsun Project
 
 ### View it [here](https://guillaumeauger85.github.io/Redsun-Project/)
 
